@@ -52,9 +52,9 @@ The extraction process does not depend on fixed coordinates or a single invoice 
 | python-dotenv | Environment variable management |
 
 ---
-
 ## 📁 Project Structure
 
+```text
 AI-Invoice-Extraction-API/
 │
 ├── app/
@@ -68,7 +68,6 @@ AI-Invoice-Extraction-API/
 │   ├── sample_invoice.pdf
 │   └── second_invoice.png
 │
-├── .env
 ├── .gitignore
 ├── requirements.txt
 └── README.md

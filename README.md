@@ -53,6 +53,27 @@ The extraction process does not depend on fixed coordinates or a single invoice 
 
 ---
 
+## 📁 Project Structure
+
+AI-Invoice-Extraction-API/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── extractor.py
+│   ├── prompts.py
+│   └── schemas.py
+│
+├── samples/
+│   ├── sample_invoice.pdf
+│   └── second_invoice.png
+│
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md
+---
+
 ## System Architecture
 
 ```text

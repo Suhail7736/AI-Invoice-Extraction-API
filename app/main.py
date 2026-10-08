@@ -11,9 +11,7 @@ from .extractor import extract_invoice
 from .schemas import InvoiceResponse
 
 
-# --------------------------------------------------
 # Environment Configuration
-# --------------------------------------------------
 
 load_dotenv(override=True)
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -25,18 +23,14 @@ if not API_KEY:
     )
 
 
-# --------------------------------------------------
 # Gemini Client
-# --------------------------------------------------
 
 client = genai.Client(
     api_key=API_KEY
 )
 
 
-# --------------------------------------------------
 # FastAPI Application
-# --------------------------------------------------
 
 app = FastAPI(
     title="AI Invoice Extraction API",
@@ -48,9 +42,7 @@ app = FastAPI(
 )
 
 
-# --------------------------------------------------
 # Root Endpoint
-# --------------------------------------------------
 
 @app.get("/")
 def root():
@@ -60,9 +52,7 @@ def root():
     }
 
 
-# --------------------------------------------------
 # Health Check
-# --------------------------------------------------
 
 @app.get("/health")
 def health():
@@ -72,9 +62,7 @@ def health():
     }
 
 
-# --------------------------------------------------
 # Invoice Extraction
-# --------------------------------------------------
 
 @app.post(
     "/extract-invoice",

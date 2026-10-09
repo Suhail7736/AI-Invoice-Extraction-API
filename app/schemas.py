@@ -1,8 +1,11 @@
-from pydantic import BaseModel
 from typing import List
+
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class Header(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     invoice_no: str = ""
     invoice_date: str = ""
     due_date: str = ""
@@ -18,10 +21,13 @@ class Header(BaseModel):
 
 
 class BodyItem(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     product_name: str = ""
     product_code: str = ""
     description: str = ""
     unit: str = ""
+
     qty: float = 0
     rate: float = 0
     gross: float = 0
@@ -32,6 +38,8 @@ class BodyItem(BaseModel):
 
 
 class Summary(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     subtotal: float = 0
     total_discount: float = 0
     total_vat: float = 0
@@ -42,6 +50,8 @@ class Summary(BaseModel):
 
 
 class InvoiceResponse(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     header: Header
-    body: List[BodyItem]
+    body: List[BodyItem] = Field(default_factory=list)
     summary: Summary
